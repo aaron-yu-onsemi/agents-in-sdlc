@@ -1,72 +1,69 @@
 ---
-title: "练习 0：先决条件"
+title: "练习 0 - 先决条件"
+description: "创建 Tailspin Toys 的个人副本，并为 Copilot CLI 工作坊准备 GitHub Codespace。"
 authors:
   - geektrainer
-lastUpdated: 2026-06-30
+lastUpdated: 2026-09-18
 ---
 
-开始 Copilot CLI 练习前，需要先完成环境准备。将先创建 Tailspin Toys 存储库的个人副本，再启动一个 [codespace][codespaces]。下一节练习会使用其中集成的终端来安装并运行 Copilot CLI。
+开始 Copilot CLI 系列练习前，需要先做好准备。你将创建 Tailspin Toys 存储库的个人副本，并启动一个 [Codespace][codespaces]。下一节练习会使用其中的集成终端来安装并运行 Copilot CLI。
+
+本练习将完成以下事项：
+
+- 基于模板创建 Tailspin Toys 项目的个人副本。
+- 创建 Codespace，并确认项目已准备就绪。
 
 ## 设置实验存储库
 
-为了给即将编写的代码创建一份存储库副本，需要基于 [模板][template-repository] 创建一个实例。这个新实例会包含实验所需的全部文件，后续练习都会在其中完成。
+你将在 Tailspin Toys 项目的个人副本中进行操作。现在基于[模板存储库][tailspin-template]创建副本。新存储库包含实验所需的全部文件。
 
-1. 在新的浏览器窗口中，访问本实验的 GitHub 存储库：`https://github.com/github-samples/tailspin-toys`。
-2. 在实验存储库页面上，选择 **Use this template** 按钮创建自己的存储库副本。然后选择 **Create a new repository**。
-
-    ![“Use this template”按钮](../../../_images/ex0-use-template.png)
-
-3. 如果参加的是由 GitHub 或 Microsoft 主办的活动，请按照导师提供的说明操作。否则，可以在已启用 GitHub Copilot 访问权限的组织中创建这个新存储库。
-
-    ![输入存储库模板设置](../../../_images/ex0-repository-settings.png)
-
-4. 记下创建的存储库路径（**organization-or-user-name/repository-name**），后续实验会用到它。
+1. 在新的浏览器窗口中，访问 [Tailspin Toys 模板][tailspin-template]。
+2. 选择 **Use this template**，然后选择 **Create a new repository**，创建自己的存储库副本。
+3. 如果参加由 GitHub 或 Microsoft 主办的活动，请按照导师提供的说明操作。否则，请在你有权访问 GitHub Copilot 的组织中创建新存储库。
+4. 记下所创建存储库的路径（`organization-or-user-name/repository-name`），后续工作坊会用到它。
 
 > [!NOTE]
-> **积压工作已准备就绪**
->
-> 通过模板创建存储库时，系统会自动创建一组 GitHub issue 作为积压工作。整个工作坊都会围绕这些 issue 展开，无需手动新建。
+> 从模板创建存储库时，系统会自动为你创建一组 GitHub 议题，作为待办事项积压列表。整个工作坊都会使用这些议题，无需自行创建。
 
-## 创建 codespace
+请使用工作坊模板的全新副本。该模板包含存储库说明、应用代码、测试、`quality-checks` 技能，以及后续要用的待办事项积压列表。如果使用的是旧副本，请向引导师确认其中包含所需文件。
 
-接下来，将使用 codespace 完成实验练习。
+## 创建 Codespace
 
-[GitHub Codespaces][codespaces] 是一个基于云的开发环境，可以直接在浏览器中编写、运行和调试代码。它提供功能完整的 IDE，并支持多种编程语言、扩展和工具。
+接下来，你将使用 Codespace 完成本工作坊。
+
+[GitHub Codespaces][codespaces] 是一种基于云的开发环境，可让你直接在浏览器中编写、运行和调试代码。它提供功能完整的编辑器，并支持多种编程语言、扩展和工具。
 
 1. 打开刚创建的存储库。
-2. 选择绿色的 **Code** 按钮。
+2. 选择 **Code**。
+3. 选择 **Codespaces** 选项卡，然后选择 **Create codespace on main**。
+4. 等待 Codespace 完成设置。模板会自动安装项目依赖项、Playwright Chromium 和本地数据库。
+5. 如果系统提示 **Do you trust the authors of the files in this folder?**，请选择 **Trust Folder & Continue**。
+6. 在存储库根目录打开终端并启动应用：
 
-    ![选择 Code 按钮](../../../_images/ex0-code-button.png)
+   ```bash
+   npm run dev
+   ```
 
-3. 选择 **Codespaces** 选项卡，再选择 **+** 按钮创建新的 Codespace。
+7. Codespaces 报告端口 `4321` 可用时，选择 **Open in Browser**，并确认 Tailspin Toys 网站已加载。
+8. 返回终端，按 <kbd>Ctrl</kbd>+<kbd>C</kbd> 停止开发服务器。
 
-    ![创建新的 codespace](../../../_images/ex0-create-codespace.png)
+## 总结和后续步骤
 
-codespace 的创建需要几分钟，但仍然比手动安装所有服务快得多。等待期间，可以先了解 GitHub Copilot 的其他功能，接下来就会用到。
+环境已准备就绪！本练习中，你：
 
-> [!CAUTION]
-> 后续练习还会回到这个 codespace。现在先将它保留在浏览器标签页中，不要关闭。
+- 基于模板创建了 Tailspin Toys 项目的个人副本。
+- 创建了 Codespace，并确认项目已准备就绪。
 
-> [!NOTE]
-> 本工作坊设计为在 codespace 或本地 [dev container][dev-containers] 中运行。这两种方式都能确保环境已安装顺畅体验所需的全部先决条件。如果更希望在本地运行，请在 VS Code 中打开克隆后的存储库，并在出现提示时选择 **Reopen in Container**——VS Code 会构建与 codespace 相同的 dev container。
-
-[codespaces]: https://github.com/features/codespaces
-[dev-containers]: https://code.visualstudio.com/docs/devcontainers/containers
-
-## 总结
-
-恭喜，已经创建了实验存储库的副本，也开始了 codespace 的创建流程。后续开始使用 Copilot CLI 时，会在其中完成操作。
-
-## 下一步
-
-接下来安装 Copilot CLI，并使用 GitHub 账户完成验证。继续前往[练习 1 - 安装 GitHub Copilot CLI][next-lesson]。
+接下来，你将在 Codespace 中[安装 GitHub Copilot CLI][next-lesson]，并使用 GitHub 账户完成身份验证。
 
 ## 资源
 
 - [GitHub Codespaces 概览][codespaces]
 - [从模板创建存储库][template-repository]
-- [Codespaces 快速入门][codespaces-quickstart]
+- [Codespaces 入门指南][codespaces-quickstart]
 
+[tailspin-template]: https://github.com/github-samples/tailspin-toys
 [template-repository]: https://docs.github.com/repositories/creating-and-managing-repositories/creating-a-template-repository
 [codespaces-quickstart]: https://docs.github.com/codespaces/getting-started/quickstart
 [next-lesson]: ../1-install-copilot-cli/
+[codespaces]: https://github.com/features/codespaces
